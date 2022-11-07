@@ -55,7 +55,7 @@ grove.onGesture(GroveGesture.Down, function () {
         . # # # .
         . . # . .
         `)
-    DFPlayerPro.MP3_control(DFPlayerPro.controlType.playPause)
+    DFPlayerPro.MP3_control(DFPlayerPro.ControlType.playPause)
     basic.clearScreen()
 })
 grove.onGesture(GroveGesture.Left, function () {
@@ -112,8 +112,8 @@ let song = 0
 let volume = 0
 basic.showIcon(IconNames.Heart)
 DFPlayerPro.MP3_setSerial(SerialPin.P1, SerialPin.P2)
-DFPlayerPro.MP3_setPlayMode(DFPlayerPro.playType.playOneSongAndPause)
-DFPlayerPro.MP3_promtMode(DFPlayerPro.promtType.promtOff)
+DFPlayerPro.MP3_setPlayMode(DFPlayerPro.PlayType.playOneSongAndPause)
+DFPlayerPro.MP3_promtMode(DFPlayerPro.PromtType.promtOff)
 DFPlayerPro.MP3_ledMode(DFPlayerPro.ledType.ledOff)
 grove.initGesture()
 volume = 10
