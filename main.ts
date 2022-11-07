@@ -11,7 +11,6 @@ grove.onGesture(GroveGesture.Right, function () {
     playSongNumber(song)
     basic.clearScreen()
 })
-// dfplayer.folderPlay(1, song, dfplayer.yesOrNot.type1)
 function playRandom () {
     song = randint(1, numberOfSongs)
     playSongNumber(song)
@@ -44,7 +43,6 @@ grove.onGesture(GroveGesture.Up, function () {
     playRandom()
     basic.clearScreen()
 })
-// dfplayer.folderPlay(1, num, dfplayer.yesOrNot.type1)
 function playSongNumber (num: number) {
     DFPlayerPro.MP3_playFileNum(num)
 }
@@ -89,6 +87,23 @@ grove.onGesture(GroveGesture.Anticlockwise, function () {
 input.onGesture(Gesture.Shake, function () {
     playSongNumber(1)
 })
+pins.onPulsed(DigitalPin.P0, PulseValue.Low, function () {
+    playSongNumber(song)
+    for (let index = 0; index < 5; index++) {
+        basic.showIcon(IconNames.Heart)
+        for (let Index = 0; Index <= 255; Index++) {
+            led.setBrightness(Index)
+            basic.pause(1)
+        }
+        basic.showIcon(IconNames.Heart)
+        for (let Index2 = 0; Index2 <= 255; Index2++) {
+            led.setBrightness(255 - Index2)
+            basic.pause(1)
+        }
+    }
+    basic.clearScreen()
+    led.setBrightness(255)
+})
 input.onGesture(Gesture.ScreenUp, function () {
     playSongNumber(2)
 })
@@ -101,27 +116,8 @@ DFPlayerPro.MP3_setPlayMode(DFPlayerPro.playType.playOneSongAndPause)
 DFPlayerPro.MP3_promtMode(DFPlayerPro.promtType.promtOff)
 DFPlayerPro.MP3_ledMode(DFPlayerPro.ledType.ledOff)
 grove.initGesture()
-volume = 15
+volume = 10
 led.setBrightness(0)
 song = 3
 DFPlayerPro.MP3_setVol(volume)
 numberOfSongs = DFPlayerPro.MP3_getTotalFileNumber()
-basic.forever(function () {
-    if (pins.digitalReadPin(DigitalPin.P0) == 1) {
-        playSongNumber(song)
-        for (let index = 0; index < 5; index++) {
-            basic.showIcon(IconNames.Heart)
-            for (let Index = 0; Index <= 255; Index++) {
-                led.setBrightness(Index)
-                basic.pause(1)
-            }
-            basic.showIcon(IconNames.Heart)
-            for (let Index2 = 0; Index2 <= 255; Index2++) {
-                led.setBrightness(255 - Index2)
-                basic.pause(1)
-            }
-        }
-        basic.clearScreen()
-        led.setBrightness(255)
-    }
-})
