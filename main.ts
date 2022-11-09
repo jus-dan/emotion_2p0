@@ -111,7 +111,7 @@ let numberOfSongs = 0
 let song = 0
 let volume = 0
 basic.showIcon(IconNames.Heart)
-DFPlayerPro.MP3_setSerial(SerialPin.P1, SerialPin.P2)
+DFPlayerPro.MP3_setSerial(SerialPin.P2, SerialPin.P1)
 DFPlayerPro.MP3_setPlayMode(DFPlayerPro.PlayType.playOneSongAndPause)
 DFPlayerPro.MP3_promtMode(DFPlayerPro.PromtType.promtOff)
 DFPlayerPro.MP3_ledMode(DFPlayerPro.ledType.ledOff)
