@@ -112,7 +112,6 @@ led.setBrightness(0)
 song = 3
 DFPlayerPro.MP3_setVol(volume)
 numberOfSongs = DFPlayerPro.MP3_getTotalFileNumber()
-let stop = 1
 basic.forever(function () {
     if (pins.digitalReadPin(DigitalPin.P0) == 1) {
         spieleSongNummer(song)
