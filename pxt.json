@@ -7,7 +7,7 @@
         "radio": "*",
         "microphone": "*",
         "Grove": "github:seeed-studio/pxt-grove#v0.5.0",
-        "pxt-DFPlayer-PRO": "github:jus-dan/pxt-dfplayer-pro#v1.0.1"
+        "pxt-DFPlayer-PRO": "github:jus-dan/pxt-dfplayer-pro#v1.0.2"
     },
     "files": [
         "main.blocks",
